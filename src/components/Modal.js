@@ -31,18 +31,20 @@ export const Modal = ({ showMovie, setShowMovie }) => {
         <>
         {showMovie ? (
             <div className="backgroundmodal" ref={modalRef} onClick={closeModal}>
-                <div className="modalwrapper" showMovie={showMovie}></div>
+                <div className="modalwrapper" showMovie={showMovie}>
                 <img src="" alt="" />
                 <div className="modalcontent">
                     <h1>Titulo do filme</h1>
-                    <p>Discrição do filme</p>
-
+                    <strong>overview:</strong><p>Discrição do filme</p>
+                    <span>Rating: *****</span>
+                    <span>Release Date: 10/01/01</span>
+                    
                     <button>ASSISTIR</button>
                 </div>
                 <button className="modalclose" onClick={() => setShowMovie(prev => !prev)}>X</button> 
-      
+                </div>
             </div>
-        ) : null}
+        ) : null}   
         </>
     )
 }

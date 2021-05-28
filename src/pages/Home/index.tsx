@@ -39,15 +39,13 @@ export function Home() {
 
       {movies?.map(movie => (
         <section className="container">
+           <Modal showMovie={showMovie} setShowMovie={setShowMovie} />
           <li className="li">
             <img className="img" onClick={openMovie} src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}/>
-
            <div>
               <h2 className="title">{movie.title}</h2>
            </div>
           </li>
-
-          <Modal showMovie={showMovie} setShowMovie={setShowMovie} />
         </section> 
       ))}
      </ul>
