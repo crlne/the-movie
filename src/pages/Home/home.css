@@ -35,10 +35,14 @@
 
 .title {
     display: block;
-    color: var(--white);
+    color: var(--torquoise-500);
     font-family: Lexend, sans-serif;
     font-size: 1.4rem;
     text-align: center;
     text-decoration: none;
-    line-height: 1rem;
+    
+}
+
+.img {
+    margin: 30px;
 }

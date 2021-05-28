@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import api from "../../api"
+import  Modal  from '../../components/Modal'
 
 import Search from '../../components/Search'
 import './home.css'
@@ -20,6 +21,12 @@ export function Home() {
     setMovies(movies)
   }
 
+  const [showMovie, setShowMovie] = useState(false);
+
+  const openMovie = () => {
+    setShowMovie(prev => !prev)
+  }
+
   return (
     <>
       <Search handleSetMovies={handleSetMovies} />
@@ -33,15 +40,16 @@ export function Home() {
       {movies?.map(movie => (
         <section className="container">
           <li className="li">
-            <img className="img" src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}/>
-           
+            <img className="img" onClick={openMovie} src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}/>
+
            <div>
               <h2 className="title">{movie.title}</h2>
            </div>
           </li>
+
+          <Modal showMovie={showMovie} setShowMovie={setShowMovie} />
         </section> 
       ))}
-
      </ul>
     </section>
     </>
