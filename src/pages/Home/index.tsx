@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import api from "../../api"
-import  Modal  from '../../components/Modal'
+//import  Modal  from '../../components/Modal'
 
 import Search from '../../components/Search'
 import './home.css'
@@ -8,6 +8,10 @@ import './home.css'
 type Movie = {
     title: string
     poster_path: string
+    release_date: string
+    vote_average: string
+    overview: string
+    id: string
 }
 
 export function Home() {
@@ -21,29 +25,30 @@ export function Home() {
     setMovies(movies)
   }
 
-  const [showMovie, setShowMovie] = useState(false);
+  //const [showMovie, setShowMovie] = useState(false);
 
-  const openMovie = () => {
-    setShowMovie(prev => !prev)
-  }
+  //const openMovie = () => {
+  //  setShowMovie(prev => !prev)
+  //}
 
   return (
     <>
       <Search handleSetMovies={handleSetMovies} />
       
       <section>
-        <h2 className="h2">Ultimos lançamentos</h2>
-      
-
+        <h1>Ultimos lançamentos</h1>
       <ul className="ul">
 
       {movies?.map(movie => (
         <section className="container">
-           <Modal showMovie={showMovie} setShowMovie={setShowMovie} />
-          <li className="li">
-            <img className="img" onClick={openMovie} src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}/>
-           <div>
+          <li>
+            <img alt={movie.title} src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}/>
+
+           <div className="card-content">
               <h2 className="title">{movie.title}</h2>
+              <strong>overview:</strong><p>{movie.overview}</p>
+              <span>Rating: {movie.vote_average}</span>
+              <span>Release Date: {movie.release_date}</span>
            </div>
           </li>
         </section> 

@@ -11,6 +11,10 @@ type SearchProps = {
 type Movie = {
     title: string
     poster_path: string
+    release_date: string
+    vote_average: string
+    overview: string
+    id: string
 }
 
 export default function Search({ handleSetMovies }: SearchProps) {
