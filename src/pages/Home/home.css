@@ -1,0 +1,44 @@
+.h2 {
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    padding: 2rem;
+    
+    padding-bottom: 40px;
+    font-size: 2rem;
+}
+.ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+
+    justify-content: center;
+    align-content: center;
+    width: fit-content;
+    margin: auto;
+}
+
+.li {
+    background: var(--gray-700);
+    border: 1px solid var(--gray-100);
+    padding: 1.25rem;
+    border-radius: 1.5rem;
+    position: relative;
+    
+    align-items: center;
+}
+
+.container {
+    width: 300px;
+}
+
+.title {
+    display: block;
+    color: var(--white);
+    font-family: Lexend, sans-serif;
+    font-size: 1.4rem;
+    text-align: center;
+    text-decoration: none;
+    line-height: 1rem;
+}

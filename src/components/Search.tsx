@@ -32,8 +32,9 @@ export default function Search({ handleSetMovies }: SearchProps) {
 
     return (
         <form className="input" onSubmit={buscarFilmes}>
-           <input type="search" onChange={event => setQuery(event.target.value)} />
-           <button type="submit"><VscSearch /></button>
-        </form>
-    )
+          
+           <input className="inputsearch" type="search" placeholder="Search" onChange={event => setQuery(event.target.value)} /> 
+           <button className="button" type="submit"><VscSearch /></button>
+        </form> 
+    ) 
 }

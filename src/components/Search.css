@@ -3,3 +3,50 @@
     margin-left: 80%;
     padding: 2rem 0 0 0;
 }
+
+
+
+.inputsearch {
+    border: none;
+    padding: 5px;
+    width: 20px;
+
+    transition: all 0.2s linear;
+}
+.inputsearch:focus {
+    width: 200px;
+    border-bottom: solid 1px;
+    outline: none;
+    
+}
+
+.button {
+    border: none;
+} 
+
+/* .inputsearch {
+    width: 100%;
+    border: 3px solid (--turquoise-500);
+    border-right: none;
+    padding: 5px;
+    height: 35px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: var(--turqsuoise-500);
+}
+
+.inputsearch:focus {
+    color: var(--gray-500);
+}
+
+.button {
+    width: 40px;
+    height: 36px;
+    border: 1px solid var(--turquoise-500);
+    background: var(--turquoise-500);
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+}*/
