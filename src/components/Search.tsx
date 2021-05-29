@@ -3,7 +3,6 @@ import { VscSearch } from "react-icons/vsc"
 import './Search.css';
 
 
-
 import api from '../api'
 
 type SearchProps = {
@@ -35,8 +34,7 @@ export default function Search({ handleSetMovies }: SearchProps) {
         console.log(response.data.results)
       })
     }
-
-    
+  
     return (
         <form className="input" onSubmit={buscarFilmes}>
           

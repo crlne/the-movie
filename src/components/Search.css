@@ -4,22 +4,17 @@
     padding: 2rem 0 0 0;
 }
 
-
-
 .inputsearch {
     border: none;
     padding: 5px;
-    background: #1F1F23;
-   
-
-    
+    background: #1F1F23;    
 }
+
 .inputsearch:focus {
     width: 200px;
     border-bottom: solid 1px #A405DC;
     outline: none;
-    color: #fff;
-    
+    color: #fff;   
 }
 
 button {

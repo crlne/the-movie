@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
 import api from "../../api"
 
+import { format, parseISO } from 'date-fns'
+
 import Search from '../../components/Search'
 import './home.css'
 
@@ -12,6 +14,8 @@ type Movie = {
     overview: string
     id: string
 }
+
+
 
 export function Home() {
   const [movies, setMovies] = useState<Movie[]>([])
@@ -30,18 +34,17 @@ export function Home() {
       
       <section>
         <h1>Ultimos lançamentos</h1>
-      <ul className="ul">
-
+      <ul>
       {movies?.map(movie => (
         <section className="container">
-          <li>
+          <li key={movie.id}>
             <img alt={movie.title} src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}/>
 
            <div className="card-content">
               <h2 className="title">{movie.title}</h2>
               <strong>overview:</strong><p>{movie.overview}</p>
               <span>Rating: {movie.vote_average}</span>
-              <span>Release Date: {movie.release_date}</span>
+              <span>Release Date: {format(parseISO(movie.release_date), 'dd/MM/yyyy')}</span>
            </div>
           </li>
         </section> 
