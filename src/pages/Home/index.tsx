@@ -16,7 +16,6 @@ type Movie = {
 }
 
 
-
 export function Home() {
   const [movies, setMovies] = useState<Movie[]>([])
 
@@ -28,23 +27,35 @@ export function Home() {
     setMovies(movies)
   }
 
+  function handleFormatDate(date: string) {
+    try {
+      const formattedDate = format(parseISO(date), 'dd/MM/yyyy')
+      return formattedDate
+    } catch(error) {
+      return "Sem data disponível"
+    }
+  }
+
   return (
     <>
       <Search handleSetMovies={handleSetMovies} />
       
       <section>
-        <h1>Ultimos lançamentos</h1>
+        <h1>Últimos lançamentos</h1>
       <ul>
       {movies?.map(movie => (
         <section className="container">
           <li key={movie.id}>
-            <img alt={movie.title} src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}/>
+            <div className="card-img">
+             <img alt={movie.title} src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}/>
+            </div>
+            
 
            <div className="card-content">
               <h2 className="title">{movie.title}</h2>
               <strong>overview:</strong><p>{movie.overview}</p>
               <span>Rating: {movie.vote_average}</span>
-              <span>Release Date: {format(parseISO(movie.release_date), 'dd/MM/yyyy')}</span>
+              <span>Release Date: {handleFormatDate(movie.release_date)}</span>
            </div>
           </li>
         </section> 
@@ -54,3 +65,4 @@ export function Home() {
     </>
   )
 }
+

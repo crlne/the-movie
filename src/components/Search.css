@@ -21,3 +21,9 @@ button {
     border: none;
     all: unset;
 } 
+
+@media (max-width: 764px) {
+    .input {
+        margin-left: 40%;
+    }
+}
