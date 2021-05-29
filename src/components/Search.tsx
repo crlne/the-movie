@@ -2,6 +2,8 @@ import { useState } from 'react'
 import { VscSearch } from "react-icons/vsc"
 import './Search.css';
 
+
+
 import api from '../api'
 
 type SearchProps = {
@@ -34,11 +36,13 @@ export default function Search({ handleSetMovies }: SearchProps) {
       })
     }
 
+    
     return (
         <form className="input" onSubmit={buscarFilmes}>
           
            <input className="inputsearch" type="search" placeholder="Search" onChange={event => setQuery(event.target.value)} /> 
-           <button className="button" type="submit"><VscSearch /></button>
+           <button className="button" type="submit"><VscSearch color="#A405DC" /></button>
+          
         </form> 
     ) 
 }

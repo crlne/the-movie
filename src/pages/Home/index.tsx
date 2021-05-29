@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import api from "../../api"
-//import  Modal  from '../../components/Modal'
 
 import Search from '../../components/Search'
 import './home.css'
@@ -24,12 +23,6 @@ export function Home() {
   function handleSetMovies(movies: Movie[]) {
     setMovies(movies)
   }
-
-  //const [showMovie, setShowMovie] = useState(false);
-
-  //const openMovie = () => {
-  //  setShowMovie(prev => !prev)
-  //}
 
   return (
     <>
